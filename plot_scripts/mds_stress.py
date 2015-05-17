@@ -20,7 +20,7 @@ distances = np.load(file_name)
 # Do the MDS for different dimensions
 ########################
 
-dimensions = np.arange(5, 30, 1)
+dimensions = np.arange(2, 30, 1)
 stress_vector = np.zeros_like(dimensions)
 
 
@@ -64,13 +64,14 @@ filename = folder + name + extensions
 # Plot
 fig = plt.figure(figsize=figsize)
 ax = fig.add_axes(axes_position)
-ax.plot(dimensions, stress_vector, '*-', linewidth=width,
+ax.plot(dimensions, stress_vector, 'o-', linewidth=width,
         markersize=markersize, markerfacecolor='r')
 
 ax.set_xlabel(xlabel)
 ax.set_ylabel(ylabel)
 ax.set_title(title)
 ax.set_ylim(bottom=0)
+ax.set_xlim(left=0)
 
 # Change the font size
 axes = fig.get_axes()
