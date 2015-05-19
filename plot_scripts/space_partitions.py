@@ -27,7 +27,7 @@ partition_set = np.arange(2, 18, 1)
 max_iter = 1000
 jobs = 2
 eps = 1e-9
-n_init = 1
+n_init = 3
 
 for index in xrange(Npartitions):
 
@@ -68,17 +68,12 @@ filename = folder + name + extensions
 # Plot here
 nplots = int(np.sqrt(Npartitions))
 gs = plt.GridSpec(nplots, nplots)
-# gs.update(hspace=0.1)
-# gs.update(wspace=0.025)
-
 fig = plt.figure(figsize=figsize)
-
-
 axes = []
 
 for index1 in xrange(nplots):
     for index2 in xrange(nplots):
-        
+
         ax = fig.add_subplot(gs[index1, index2])
         index = index1 * nplots + index2
         map = to_plot[index]
@@ -95,13 +90,10 @@ if remove_axis:
         axes[index].get_yaxis().set_visible(False)
 
 # fig.tight_layout(pad=0, w_pad=0, h_pad=0)
+
 plt.subplots_adjust(left=0.25, right=0.75, wspace=0.0, hspace=0)
 
 # Save the figure
 plt.savefig(filename)
 os.system('pdfcrop %s %s' % (filename, filename))
 plt.show()
-
-
-plt.show()
-

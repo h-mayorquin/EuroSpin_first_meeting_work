@@ -100,6 +100,7 @@ ylabel = 'Stress'
 # Plot format
 inter = 'nearest'
 cmap = 'binary'
+cmap = 'jet'
 
 # Save directory
 folder = '../results/'

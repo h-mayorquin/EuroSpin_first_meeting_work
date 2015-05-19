@@ -18,7 +18,7 @@ distances = np.load(file_name)
 #####################
 
 # Define classifier
-dim = 15
+dim = 10
 max_iter = 3000
 eps = 1e-9
 
