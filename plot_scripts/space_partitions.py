@@ -57,6 +57,7 @@ ylabel = 'Stress'
 
 # Plot format
 inter = 'nearest'
+cmap = 'hot'
 cmap = 'jet'
 
 # Save directory

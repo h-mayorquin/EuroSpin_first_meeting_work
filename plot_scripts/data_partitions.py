@@ -100,7 +100,7 @@ ylabel = 'Stress'
 # Plot format
 inter = 'nearest'
 cmap = 'binary'
-cmap = 'jet'
+cmap = 'seismic'
 
 # Save directory
 folder = '../results/'
@@ -128,7 +128,8 @@ for center_index in xrange(ncenters):
         # Construct and remap the matrix
         matrix[map_indexes] = center
         map = matrix.reshape((28, 28))
-        im = ax.imshow(map, interpolation=inter, cmap=cmap)
+        au = np.max(map)
+        im = ax.imshow(map, vmin=-au, vmax=au, interpolation=inter, cmap=cmap)
         title = 'Patch=' + str(patches[patch_index]) + ' - '
         title += 'Code vector=' + str(centers[center_index])
         ax.set_title(title)
